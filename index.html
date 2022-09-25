@@ -6,29 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/src/style.css">
 </head>
 
 <body>
-    <h1>ToDo App</h1>
-    <p>What you have to do today?</p>
-    <form action="submit">
-        <input type="text" name="todovalue" id="todovalue">
-        <input type="button" value="Add" id="todoaddbtn">
-    </form>
-    <p>look at</p>
-    <form action="submit">
-        <input type="checkbox" name="todofilterall" id="filterbox">
-        <label for="" todofilterall">all</label>
-        <input type="checkbox" name="todofilteropen" id="filterbox">
-        <label for="" todofilteropen">open</label>
-        <input type="checkbox" name="todofilterdone" id="filterbox">
-        <label for="" todofilterdone">done</label>
-    </form>
-
-    <script src="/src/script.js"></script>
+    <header>
+        <h1>Todo App</h1>
+    </header>
+    <main>
+        <div class="todo-input">
+            <button id="todoAdd">Add</button>
+            <input type="text" id="todoText">
+        </div>
+        <div class="todoListContent">
+            <h2>your Todos</h2>
+            <ul id="todolist">asdf</ul>
+        </div>
+        <div class="todo-action">
+            <button id="todoUpdate">update</button>
+            <button id="todoDelete">delete</button>
+        </div>
+    </main>
+    <script src="./test.js"></script>
 </body>
-
-
 
 </html>
