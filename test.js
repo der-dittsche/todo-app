@@ -2,7 +2,7 @@ const todoButtonAdd = document.querySelector("#todoAdd");
 const todoButtonDel = document.querySelector("#todoDelete");
 const todoElements = document.querySelector("#todoList");
 const todoInput = document.querySelector("#todoInput");
-const todoUrl = "http://localhost:4730/todos";
+const todoUrl = "http://localhost:4730/todos/";
 
 let todos = [];
 
@@ -29,17 +29,16 @@ function renderTodos() {
     const todoDescription = document.createTextNode(todo.description);
     todoElement.append(todoDescription);
 
-    todoElements.setAttribute("data-id", todo.id);
+    todoElement.setAttribute("data-id", todo.id);
     todoElements.appendChild(todoElement);
   });
 }
 
 function addToDo() {
-  todoInput.value = "";
-
-  if (todoInput.length > 0) {
+  console.log("Hallo Welt");
+  if (todoInput.value.length > 0) {
     const newTodo = {
-      description: newInput.value,
+      description: todoInput.value,
       done: false,
     };
     fetch(todoUrl, {
@@ -63,8 +62,8 @@ function updateTodo(e) {
     description: e.target.nextSibling.textContent,
     done: e.target.checked,
   };
-
-  fetch(todoUrl + todo.id, {
+  console.log(e.target, id, updateTodos);
+  fetch(todoUrl + id, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(updateTodos),
