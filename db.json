@@ -12,38 +12,8 @@
     },
     {
       "id": 3,
-      "description": "Lern JS",
+      "description": "Learn JS",
       "done": false
-    },
-    {
-      "id": 4,
-      "description": "Lern P5",
-      "done": false
-    },
-    {
-      "id": 5,
-      "description": "Lern API",
-      "done": false
-    },
-    {
-      "id": 6,
-      "description": "Lern REST",
-      "done": false
-    },
-    {
-      "id": 7,
-      "description": "Lern NODE",
-      "done": false
-    },
-    {
-      "id": 8,
-      "description": "Lern Postman",
-      "done": false
-    },
-    {
-      "description": "mach mal Pause",
-      "done": false,
-      "id": 9
     }
   ]
 }

@@ -8,7 +8,7 @@ let todos = [];
 
 function loadTodos() {
   fetch(todoUrl)
-    .then((req) => req.json())
+    .then((response) => response.json())
     .then((todosFromApi) => {
       todos = todosFromApi;
       renderTodos();
@@ -34,12 +34,12 @@ function renderTodos() {
   });
 }
 
-function addToDo() {
+function addTodoElement() {
   todoInput.value = "";
 
   if (todoInput.length > 0) {
     const newTodo = {
-      description: newInput.value,
+      description: todoInput.value,
       done: false,
     };
     fetch(todoUrl, {
@@ -57,40 +57,6 @@ function addToDo() {
   }
 }
 
-function updateTodo(e) {
-  const id = e.target.parentElement.getAttribute("data-id");
-  const updateTodos = {
-    description: e.target.nextSibling.textContent,
-    done: e.target.checked,
-  };
-
-  fetch(todoUrl + todo.id, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(updateTodos),
-  })
-    .then((response) => response.json())
-    .then(() => {
-      loadTodos();
-    });
-}
-
-function deleteTodos() {
-  todos.forEach((todo) => {
-    if (todo.done === true) {
-      fetch(todoUrl + todo.id, {
-        method: "DELETE",
-      })
-        .then((response) => response.json())
-        .then(() => {
-          loadTodos();
-        });
-    }
-  });
-}
-
-todoButtonAdd.addEventListener("click", addToDo);
-todoElements.addEventListener("change", updateTodo);
-todoButtonDel.addEventListener("click", deleteTodos);
+todoButtonAdd.addEventListener("click", addTodoElement);
 
 loadTodos();
